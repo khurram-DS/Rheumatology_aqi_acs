@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rheumatology Cases Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">Rheumatology Case prediction based on AQI</span>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-center">
+                        <img src="https://image.flaticon.com/icons/svg/1899/1899103.svg" class="rounded img-fluid"
+                            alt="intro-img" width="75%">
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h1 class="display-5">Rheumatology Case prediction based on AQI</h1>
+                    <p class="lead">Air Pollution is Rising!</p>
+                    <p>!!!! As the Air pollution is increasing Day by Day. So Based on AQI we the ACS team build a model That can predict no of Rheumatology cases on that day !!!!</p>
+                    <h2 class="display-5">About ACS</h1>
+                    <p> 
+
+                    ACS is a consulting company specialized in data analysis was established during 2010. 
+                    Our mission is to clarify the right direction for business owners in order to get better business 
+                    results using very advanced statistical approaches, also, to support postgraduate students to prove 
+                    their finding using academic statistical analysis. Providing the work in a high level of quality is 
+                    one of our important goals. Our future vision is to be a leader in business analytics advisor for all 
+                    successful business owners.
+        
+                    </p>
+                    <hr class="my-4">
+                    <p>we have used Following technique to achieve this results </p>
+                    <p><span class="badge badge-primary">Ridge Regression</span>
+                        <span class="badge badge-success">Linear Regression</span>,
+                        <span class="badge badge-danger">Flask</span>,
+                        <span class="badge badge-success">Python</span>,
+                        <span class="badge badge-danger">HTML</span>,    
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <!-- Row Ends -->
+
+            <!--1. CO - CO stands for ( carbon monoxide measured in mg / m3 (milligrams per cubic meter of air))
+                2. NO - Nitric oxide ( measured in FENO (fractional exhaled nitric oxide))
+                3. NO2- Nitrogen dioxide (  measured in parts per billion (ppb) or (µg m-3))
+                4. NOx- Any Nitric x-oxide (NOx is measured in ppb (parts per billion)
+                5. O3- Ozone or Trioxygen ( O3 is measured in ug / m3 (micrograms per cubic meter of air)
+                6. PM10- Particulate Matter 10-micrometer ( PM10 is measured in ug / m3 (micrograms per cubic meter of air)
+                7. SO2- Sulphur Dioxide( SO2 is measured in ug / m3 (micrograms per cubic meter of air) -->
+
+            <div class="row my-4">
+                <div class="col-md-6">
+                    <h3>Form</h3>
+                    <form method="POST" , action="/">
+                        <div class="form-row">
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                        <label for="date" class="date">Date</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="PM10_24hr_avg" class="mintemp"> PM10_24hr_avg </label>
+                        <input type="text" class="form-control" id="PM10_24hr_avg" name="PM10_24hr_avg">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="SO2_24hr_avg" class="SO2_24hr_avg">SO2_24hr_avg</label>
+                        <input type="text" class="form-control" id="SO2_24hr_avg" name="SO2_24hr_avg">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="NO2_1hr_avg" class="rainfall">NO2_1hr_avg</label>
+                        <input type="text" class="form-control" id="NO2_1hr_avg" name="NO2_1hr_avg">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="CO_8hr_max" class="evaporation">CO_8hr_max</label>
+                        <input type="text" class="form-control" id="CO_8hr_max" name="CO_8hr_max">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="O3_8hr_max" class="sunshine">O3_8hr_max</label>
+                        <input type="text" class="form-control" id="O3_8hr_max" name="O3_8hr_max">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="Station" class="location" name="Station">Station</label>
+                        <select class="Station" id="Station" name="Station" aria-label="Station">
+                            <option selected>Select Station</option>
+                            <option value= 0>Station_1</option>
+                            <option value= 1>Station_2</option>
+                            <option value= 2>Station_3</option>
+                            <option value= 3>Station_4</option>
+                            <option value= 4>Station_5</option>
+                            <option value= 5>Station_6</option>
+                            <option value= 6>Station_7</option>
+                            <option value= 7>Station_8</option>
+                            <option value= 8>Station_9</option>
+                        </select>
+                    </div>
+                </div>
+                                <button type="submit" class="btn btn-primary my-1 btn-block">Predict</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-6">
+                    <h3>AQI prediction  </h3>
+                    {% if my_prediction1 %}
+                    {% if my_prediction1< 51 %}
+                    <h4 class="text text-success">Predicted value of AQI<sub></sub> is {{ my_prediction1 }}, GOOD</h4>
+                    {% elif my_prediction1< 100 %}
+                    <h4 class="text text-info">Predicted value of AQI<sub></sub> is {{ my_prediction1  }} , Satisfactory
+                    </h4>
+                    {% elif my_prediction1 < 200 %}
+                    <h4 class="text text-primary">Predicted value of AQI<sub></sub> is {{ my_prediction1  }}, Moderately Polluted
+                    </h4>
+                    {% elif my_prediction1 < 300 %}
+                    <h4 class="text text-warning">Predicted value of AQI<sub></sub> is {{ my_prediction1  }} , Poor
+                    </h4>
+                    {% elif my_prediction1 < 400 %}
+                    <h4 class="text text-danger">Predicted value of AQI<sub></sub> is {{ my_prediction1  }}, Very Poor</h4>
+                    {% else %}
+                    <h4 class="text text-danger">Predicted value of AQI<sub></sub> is {{ my_prediction1 }}, Severe
+                    </h4>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    {% if my_prediction2 %}
+                    <h3>No of Rheumatology Case </h3>
+                   
+                    
+                    <h4 class="text text-success">Number of Rheumatology Cases Based on AQI <sub></sub> is {{ my_prediction2 }} </h4>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    {% if my_prediction3 %}
+                    
+                    <h3>Disease Activity Score Prediction </h3>
+                   
+                    
+                    <h4 class="text text-danger">Disease Activity Mean score of Rheumatology Cases based on AQI <sub></sub> is {{ my_prediction3 [0].round(2) }} </h4>
+                    {% endif %}
+                </div>
+                
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center text-white">
+          <a href="https://www.solutions4statistics.com/" target="_blank">ACS kuwait |</a>
+          <a href="https://www.linkedin.com/company/advancementsolutionsforstatistics/" target="_blank">Linkedin | </a>
+          <a href="https://www.instagram.com/acs_kw/" target="_blank">Instagram </a>
+        </div>
+      </footer>
+      </div>
+           <p class='footer-description'> Copyright © 2021 ACS</p>
+      </div>
+</body>
+
+</html>
